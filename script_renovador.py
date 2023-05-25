@@ -63,7 +63,7 @@ for i in range(numero_de_livros):
     print(f"Data atual: {data_atual}")
     print(f"Quantidade de renovações: {qnt_renovacoes}")
 
-    if qnt_renovacoes >= 14:
+    if qnt_renovacoes >= 13:
         raise Exception(f'Impossível renovar livro "{titulo}": surpassa quantia máxima de renovações')
 
     elif data_atual == data_limite:
