@@ -33,11 +33,8 @@ campo_usuario.send_keys(f"{usuario}")
 campo_senha.send_keys(f"{senha}")
 campo_senha.send_keys(Keys.RETURN)
 
-pagina_renovacao = driver.find_element(By.XPATH, '//*[@id="app_top"]/nav/div/ul/li[4]/a')
-pagina_renovacao.click()
-
+driver.get("https://portal.ufsm.br/biblioteca/leitor/situacao.html")
 data_atual = strftime("%d/%m/%Y", time.localtime())
-
 
 numero_de_livros = 0
 try:
@@ -50,9 +47,6 @@ except NoSuchElementException:
 
 
 for i in range(numero_de_livros):
-
-
-
     titulo = driver.find_element(By.XPATH, f'//*[@id="emprestimos"]/tbody/tr[{i+1}]/td[3]').text
     qnt_renovacoes = int(driver.find_element(By.XPATH, f'//*[@id="emprestimos"]/tbody/tr[{i+1}]/td[7]').text)
     data_limite = driver.find_element(By.XPATH, f'//*[@id="emprestimos"]/tbody/tr[{i+1}]/td[6]').text

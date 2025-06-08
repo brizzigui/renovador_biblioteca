@@ -37,5 +37,5 @@ jobs:
         SENHA: ${{ secrets.SENHA }}
         USER: ${{ secrets.USER }}
         
-      run: python script_renovador.py
+      run: python ./old/script_renovador.py
       
